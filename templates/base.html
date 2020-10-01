@@ -12,15 +12,21 @@
 
 </head>
 <body>
-    <div class="content">
+    <div class="center"></div>
+         <div class="content">
         {% block content %}
+
         {% endblock %}
-    </div>
     {% if user.is_authenticated %}
-    <p>Wyloguj się <a href="/logout">tutaj!</a>
+        </div>
+        <p>Wyloguj się <a href="/logout">tutaj!</a></p>
     {% else %}
+    </div>
+    <div class="center">
     <p>zaloguj się <a href="/login">tutaj!</a></p>
     {% endif %}
+    </div>
+</body>
 
 
 
