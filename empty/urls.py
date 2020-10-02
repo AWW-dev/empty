@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from account.views import register
+from account.views import register, ShowProfileView
 from basic import views
 
 urlpatterns = [
@@ -25,6 +25,7 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('register/', register, name = 'register'),
     path("userpanel/", views.UserPanel),
+    path("user/<int:id>/", ShowProfileView),
 
 
 ]

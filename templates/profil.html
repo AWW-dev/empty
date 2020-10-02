@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{%  block content %}
+    <h1>nick: {{ user.username }}</h1>
+        e-mail: {{ user.email }} </br>
+        firma: {{ user.userprofile.company }}
+{% endblock %}
