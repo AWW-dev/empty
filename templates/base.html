@@ -9,23 +9,59 @@
     <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
     <script src="{% static 'app.js' %}"></script>
     <title>BASIC</title>
+    <style>
+        .center {
+            margin: auto;
+            width: 70%;
+            padding: 50px ;
+        }
 
+        .header {
+            padding: 80px;
+            text-align: center;
+            background: #FFE4C4;
+            color: black;
+            font-size: 100 px;
+            position: relative;
+        }
+
+        .center_clean {
+            margin: auto;
+            width: 50%;
+            padding: 15px ;
+            text-align: left;
+        }
+        html {
+  height: 100%;
+}
+
+
+       </style>
 </head>
 <body>
-    <div class="center"></div>
-         <div class="content">
-        {% block content %}
-
-        {% endblock %}
-    {% if user.is_authenticated %}
+    <div class="content">
+        <div class="header">
+            {% block header %}
+                    <h1>Cyber It Hub</h1>
+                    <p> Witamy </p>
+            {% endblock %}
         </div>
+        {% block content %}
+        <div class="center_clean">
+            <tb>
+                <p>zaloguj się <a href="/login">tutaj!</a></p>
+                <p>Nie masz konta? zarejestruj się! <a href="/register">tutaj!</a></p>
+            </tb>
+        </div>
+        {% endblock %}
+         <br>
+         {% block inside %}
+         {% endblock %}
+    {% if user.is_authenticated %}
         <hr>
-        <p>Wyloguj się <a href="/logout">tutaj!</a></p>
-    {% else %}
-    </div>
-    <div class="center">
-    <p>zaloguj się <a href="/login">tutaj!</a></p>
+        <p class="center">Wyloguj się <a href="/logout">tutaj!</a></p>
     {% endif %}
+
     </div>
 </body>
 
