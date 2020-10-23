@@ -23,7 +23,7 @@ from apps.views import ShowAppsView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
+    path('', views.home, name='home'),
     path('', include('django.contrib.auth.urls')),
     path('register/', register, name='register'),
     path('edit_profile/', UserEditView.as_view(), name='edit_profile'),

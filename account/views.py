@@ -5,7 +5,8 @@ from django.contrib.auth.forms import UserChangeForm
 from django.urls import reverse_lazy
 from django.views import View, generic
 
-from account.forms import RegisterForm, UserProfileForm
+
+from account.forms import RegisterForm, UserProfileForm, EditProfileForm
 
 
 def register(request):
@@ -31,7 +32,7 @@ def ShowProfileView(request, id):
     return render(request, 'profil.html', {'user': user})
 
 class UserEditView(generic.UpdateView):
-    form_class = UserChangeForm
+    form_class = EditProfileForm
     template_name = "registration/edit_profile.html"
     success_url = reverse_lazy('home')
 

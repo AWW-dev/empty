@@ -1,5 +1,5 @@
 import form as form
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.forms import User
 from django import forms
 
@@ -32,3 +32,8 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         exclude = ['user', 'app']
+
+class EditProfileForm(UserChangeForm):
+    class Meta:
+        model = User
+        fields = ['username', 'password']
