@@ -33,11 +33,13 @@
 
 
     <div class="center">
-        <h2>Login</h2>
-        <form method="post" class="form-group" >
-                  {% csrf_token %}
-                  {{ form.as_p }}
-                 <button type="submit" >login</button>
+
+        <form method="post" class="login-form" >
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <br>
+                 <button type="submit" class="btn btn-elegant">login</button>
         </form>
     </div>
 

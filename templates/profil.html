@@ -21,18 +21,34 @@
         margin: auto;
         width: 70%;
         padding: 15px ;
-        text-align: center;
+        text-align: left;
         }
 
 </style>
     <div class="center_clean">
-        <h3>nick: {{ user.username }}</h3>
-            e-mail: {{ user.email }} </br>
-            firma: {{ user.userprofile.company }}</br>
+        <div class="table-responsive">
+             <table class="table">
+                 <tr>
+                <td>Nick: </td>
+                <td> {{ user.username }}</td>
+                </tr>
+                  <tr>
+                <td>E-mail</td>
+                <td>{{ user.email }}</td>
+                </tr>
+                 <tr>
+                <td>Firma: </td>
+                <td> {{ user.userprofile.company }}</td>
+                </tr>
+
+             </table>
+            
+            <p class="center">
             Aby edytować konto kliknij <a href="/edit_profile/">tu</a>
-        <br>
+            <br>
+            </p>
    </div>
         <form class="center">
-            <input type="button" value="cofnij" onclick="history.back()">
+            <input type="button" value="cofnij" class="btn btn-elegant" onclick="history.back()">
         </form>
 {% endblock %}

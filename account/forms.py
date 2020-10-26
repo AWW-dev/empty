@@ -22,10 +22,10 @@ class RegisterForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']
 
         widgets = {
-            'username': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.TextInput(attrs={'class': 'form-control'}),
-            'password1': forms.TextInput(attrs={'class': 'form-control'}),
-            'password2': forms.TextInput(attrs={'class': 'form-control'}),
+            'username': forms.TextInput(attrs={'class': 'form-input-material'}),
+            'email': forms.TextInput(attrs={'class': 'form-input-material'}),
+            'password1': forms.TextInput(attrs={'class': 'form-input-material'}),
+            'password2': forms.TextInput(attrs={'class': 'form-input-material'}),
         }
 
 class UserProfileForm(forms.ModelForm):

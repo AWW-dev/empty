@@ -4,12 +4,27 @@
     <p>Rejestracja</p>
 {% endblock %}
 {% block content %}
-    <div class="center">
-    <form method="POST" class="form-group">
+<style>
+.form-input-material {
+  --input-default-border-color: white;
+  --input-border-bottom-color: white;
+
+  input {
+    color: white;
+  }
+}
+
+
+
+</style>
+<div class="center">
+    <form method="POST" class="login-form">
         {% csrf_token %}
-        {{ form.as_p }}
-        {{ profile_form.as_p }}
-        <button type="submit" >zarejestruj </button>
+        {{ form }}
+        {{ profile_form }}
+        <br>
+        <br>
+        <button type="submit" class="btn btn-elegant">zarejestruj </button>
     </form>
     </div>
 {% endblock %}

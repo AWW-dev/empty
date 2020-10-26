@@ -20,28 +20,49 @@
         margin: auto;
         width: 70%;
         padding: 15px ;
-        text-align: center;
+        text-align: left;
         }
 
 </style>
     <div class="center_clean">
         <h3>Wszystkie usługi:</h3>
-        {%  for app in apps %}
-                <p>{{ app.name }}</p>
-                <p>{{ app.content }}</p>
-                <p> <a href="/{{ app.link }}">{{ app.link }}</a></p>
-                <hr>
+
+        <div class="table-responsive">
+             <table class="table">
+                 <tr>
+                     <th scope="col">Nazwa narzędzia</th>
+                     <th scope="col">Opis narzędzia</th>
+                     <th scope="col">Link do narzędzia</th>
+                 </tr>
+                 {%  for app in apps %}
+                 <tr>
+                <td>{{ app.name }}</td>
+                <td>{{ app.content }}</td>
+                <td> <a href="/{{ app.link }}">{{ app.link }}</a></td>
+                </tr>
             {%  endfor %}
+             </table>
+        </div>
         </ul>
             <br>
         <h3>Twoje usługi:</h3>
-        {%  for name_app in name_apps %}
-                <p>{{ name_app.name }}</p>
-                <p>{{ name_app.content }}</p>
-                <p> <a href="/{{ name_app.link }}">{{ name_app.link }}</a></p>
-        {%  endfor %}
+        <div class="table-responsive">
+             <table class="table">
+                 <tr>
+                     <th scope="col">Nazwa narzędzia</th>
+                     <th scope="col">Opis narzędzia</th>
+                     <th scope="col">Link do narzędzia</th>
+                 </tr>
+                 {%  for name_app in name_apps %}
+                 <tr>
+                <td>{{ name_app.name }}</td>
+                <td>{{ name_app.content }}</td>
+                <td> <a href="/{{ name_app.link }}">{{ name_app.link }}</a></td>
+                </tr>
+                 {%  endfor %}
+             </table>
     </div>
         <form class="center">
-            <input type="button" value="cofnij" onclick="history.back()">
+            <input type="button" value="cofnij" class="btn btn-elegant" onclick="history.back()">
         </form>
 {% endblock %}
