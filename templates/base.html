@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
     <script src="{% static 'app.js' %}"></script>
-    <title>BASIC</title>
+    <title>CYBER IT HUB</title>
     <style>
         .center {
             margin: auto;
@@ -19,7 +19,7 @@
         .header {
             padding: 80px;
             text-align: center;
-            background: #FFE4C4;
+            background: rgba(0, 0, 0, 0.2);
             color: black;
             font-size: 100 px;
             position: relative;
@@ -76,8 +76,10 @@
 <body>
     <div class="content">
         <div class="header">
+            <img src="{% static 'img/logo.gif' %}"  width="20%" style="float:left">
+            <h1>Cyber It Hub</h1>
             {% block header %}
-                    <h1>Cyber It Hub</h1>
+
                     <p> Witamy </p>
             {% endblock %}
         </div>
